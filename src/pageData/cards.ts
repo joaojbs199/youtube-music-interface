@@ -28,6 +28,16 @@ const cards = [
         name: "Foreigner",
         img: "https://lh3.googleusercontent.com/1HiOXC35IuR-szYtsGhpbwcwjviYHeW-LK7qBiwHip7GuxnTbOp-NXbAioyWFn9Edg6fsFv4ktNRkNM0=w544-h544-p-l90-rj",
         subs: "395 mil inscritos"
+    },
+    {
+        name: "Blondie",
+        img: "https://lh3.googleusercontent.com/WHcgthiJvxTNDaq00w81ryDvFkxYGIagnTOWrbaaRnhQNJVRn6Y_SlNdJDN3tUBzXrcQwf3e8takXA=w544-h544-p-l90-rj",
+        subs: "605 mil inscritos"
+    },
+    {
+        name: "Fleetwood Mac",
+        img: "https://lh3.googleusercontent.com/hIIR2m8Temp2ARKxgsCwmVasEPYo0CPVHy8vg-4eWMrOKnru60-ygGdxaOLOBU6I-aqm2wbqbkyPow=w544-h544-p-l90-rj",
+        subs: "1,09 mi de inscritos"
     }
 ];
 

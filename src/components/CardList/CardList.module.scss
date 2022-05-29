@@ -44,7 +44,6 @@
   color: $primaryText;
   font-size: 22px;
   text-align: center;
-  margin-top: 100px;
 
   @include break($bkp900) {
     display: block;
@@ -62,7 +61,6 @@
   color: $primaryText;
   font-size: 22px;
   text-align: center;
-  margin-top: 100px;
 
   @include break($bkp700) {
     display: block;

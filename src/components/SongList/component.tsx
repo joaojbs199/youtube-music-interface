@@ -1,8 +1,6 @@
 import React from "react";
 import Song from "../Song/component";
 import styles from "./SongList.module.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleChevronRight, faChevronCircleLeft } from "@fortawesome/free-solid-svg-icons";
 
 interface Props {
     songs: {
@@ -16,10 +14,8 @@ const SongList: React.FC<Props> = ({songs}) => {
 
 
     return (
+
         <>
-
-            <FontAwesomeIcon className={styles.arrowLeft} icon={faChevronCircleLeft} />
-
             <section className={styles.songList}>
 
                 {songs.map((song, i) => {
@@ -29,9 +25,6 @@ const SongList: React.FC<Props> = ({songs}) => {
                 })}
                 
             </section>
-
-            <FontAwesomeIcon className={styles.arrowRight} icon={faCircleChevronRight} />
-
         </>
     )
 }
