@@ -1,0 +1,172 @@
+@import "../../configStyles/variables.scss";
+
+@mixin break($width) {
+    @media screen and (max-width: $width) {
+      @content
+    }
+}
+
+.header {
+    width: 100%;
+    min-height: 60px;
+    height: fit-content;
+    padding: 25px;
+    border-bottom: 1px solid $gray;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+
+    @include break(900px) {
+        width: 23px;
+        height: 23px;
+    }
+}
+
+.logoText {
+    color: $primaryText;
+    font-family: $Oswald;
+    font-size: 43px;
+    font-weight: 400;
+    margin: 0 0 3px 3px;
+    cursor: pointer;
+
+    @include break(350px) {
+        display: none;
+    }
+
+    @include break(900px) {
+        font-size: 20px;
+    }
+}
+
+.menu {
+    display: flex;
+    width: fit-content;
+    margin: auto;
+}
+
+.textBtn {
+    display: inline;
+    width: fit-content;
+    height: fit-content;
+    font-family: $Roboto;
+    font-size: 30px;
+    font-weight: 600;
+    margin: 0 20px;
+    background-color: transparent;
+    color: $secondText;
+    cursor: pointer;
+
+    &:hover {
+        color: $primaryText;
+    }
+
+    @include break(900px) {
+        display: none;
+    }
+
+    @include break(1100px) {
+        font-size: 20px;
+        margin: 0 10px;
+    }
+}
+
+.iconBtn {
+    display: none;
+    width: fit-content;
+    height: fit-content;
+    font-family: $Roboto;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 20px;
+    background-color: transparent;
+    color: $secondText;
+    cursor: pointer;
+
+    &:hover {
+        color: $primaryText;
+    }
+
+    @include break(900px) {
+        margin: 0 10px;
+        display: inline;
+        font-size: 20px;
+    }
+
+    @include break(500px) {
+        display: none;
+    }
+}
+
+.menuHide {
+    display: none;
+    width: fit-content;
+    height: fit-content;
+    font-family: $Roboto;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: transparent;
+    color: $secondText;
+    cursor: pointer;
+
+    &:hover {
+        color: $primaryText;
+    }
+
+    @include break(500px) {
+        margin: 0 10px;
+        display: inline;
+        font-size: 20px;
+    }
+
+}
+
+.screenShare {
+    font-size: 35px;
+    color: $primaryText;
+    margin: 0 40px 0 0;
+    cursor: pointer;
+
+    &:hover {
+        color: $contrastTheme;
+    }
+
+    @include break(900px) {
+        margin: 0 20px;
+        font-size: 20px
+    }
+}
+
+.userIcon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    padding: 20px;
+    font-family: $Roboto;
+    font-size: 25px;
+    background-color: $userIcon;
+    color: $primaryText;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: none;
+
+    &:hover {
+        outline: 6px solid $gray;
+    }
+
+    @include break(900px) {
+        width: 20px;
+        height: 20px;
+        padding: 16px;
+        font-size: 14px;
+    }
+}

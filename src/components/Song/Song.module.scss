@@ -1,0 +1,80 @@
+@import "../../configStyles/variables.scss";
+
+@mixin break($width) {
+    @media screen and (max-width: $width) {
+      @content
+    }
+}
+
+.songContainer {
+    width: fit-content;
+    height: fit-content;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+
+    @include break(900px) {
+        margin: 20px 0;
+    }
+
+    @include break(800px) {
+        width: 100%;
+    }
+
+    @include break(630px) {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+}
+
+.songImg {
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+
+    @include break(630px) {
+        margin: auto;
+    }
+    
+}
+
+.songDescription {
+    width: fit-content;
+    margin-left: 20px;
+
+    @include break(630px) {
+        margin: 0;
+        text-align: center;
+        width: 100%;
+    }
+    
+}
+
+.songDescription h1 {
+    font-family: $Roboto;
+    font-size: 25px;
+    color: $primaryText;
+    white-space: nowrap;
+
+    @include break(630px) {
+        font-size: 15px;
+        padding: 10px 0 0 0;
+        font-size: 20px;
+    }
+
+}
+
+.songDescription p {
+    font-family: $Roboto;
+    font-size: 22px;
+    padding: 8px 0 0 0;
+    font-weight: 500;
+    color: $secondText;
+    white-space: nowrap;
+
+    @include break(800px) {
+        display: none;
+    }
+}
+
