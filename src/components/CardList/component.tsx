@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef, useLayoutEffect, useContext } from "react";
+import { Carrossel } from "../Carrossel/component";
 import Card from "../Card/component";
 import styles from "./CardList.module.scss";
 
@@ -13,12 +14,28 @@ interface Props {
 
 const CardList: React.FC<Props> = ({cards}) => {
 
+    const { scroll } = useContext(Carrossel);
+    const list = useRef<HTMLDivElement>(null);
+
+    useLayoutEffect(() => {
+        
+        if(null !== list.current) {
+
+            if(scroll.right) {
+                list.current.scrollLeft += list.current.scrollWidth
+            }
+            if(scroll.left) {
+                list.current.scrollLeft -= list.current.scrollWidth
+            }
+        }
+    }, [scroll]);
+
     return (
         <>
             <h1 className={styles.bests}>MAIS OUVIDOS</h1>
             <h1 className={styles.favorite}>SEU ARTISTA FAVORITO</h1>
         
-            <section className={styles.cardList}>
+            <section ref={list} className={`${styles.cardList} cardList`}>
                 
                 {cards.map((card, i) => {
                     

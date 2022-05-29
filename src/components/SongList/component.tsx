@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useLayoutEffect, useRef, useContext } from "react";
+import { Carrossel } from "../Carrossel/component";
 import Song from "../Song/component";
 import styles from "./SongList.module.scss";
 
@@ -12,11 +13,26 @@ interface Props {
 
 const SongList: React.FC<Props> = ({songs}) => {
 
+    const { scroll } = useContext(Carrossel);
+    const list = useRef<HTMLDivElement>(null);
+
+    useLayoutEffect(() => {
+        
+        if(null !== list.current) {
+
+            if(scroll.right) {
+                list.current.scrollLeft += list.current.scrollWidth
+            }
+            if(scroll.left) {
+                list.current.scrollLeft -= list.current.scrollWidth
+            }
+        }
+    }, [scroll]);
 
     return (
 
         <>
-            <section className={styles.songList}>
+            <section ref={list} className={styles.songList}>
 
                 {songs.map((song, i) => {
                     return (

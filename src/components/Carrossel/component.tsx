@@ -1,4 +1,4 @@
-import React from "react";
+import React, { createContext, useState } from "react";
 import styles from "./Carrossel.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
@@ -7,30 +7,43 @@ interface Props {
     children: React.ReactNode
 }
 
-const Carrossel: React.FC<Props> = ({children}) => {
+interface ScrollType {
+    scroll: {
+        left: boolean;
+        right: boolean;
+    }
+};
 
-    
+export const Carrossel = createContext({} as ScrollType);
 
-    return(
+export const CarrosselProvider: React.FC<Props> = ({children}) => {
 
-        <div className={styles.carrossel}>
+    const [ scroll, setScroll ] = useState({
+        left: false,
+        right: false,
+    });
 
-            <div className={styles.scrollControllers}>
+    return (
+        <Carrossel.Provider value={{scroll}}>
 
-                <button className={styles.scrollLeft}>
-                    <FontAwesomeIcon className={styles.arrowLeft} icon={faChevronLeft} />
-                </button>
+            <div className={styles.carrossel}>
 
-                <button className={styles.scrollRight}>
-                    <FontAwesomeIcon className={styles.arrowRight} icon={faChevronRight} />
-                </button>
+                <div className={styles.scrollControllers}>
+
+                    <button onClick={() => setScroll({left: true, right: false})} className={styles.scrollLeft}>
+                        <FontAwesomeIcon className={styles.arrowLeft} icon={faChevronLeft} />
+                    </button>
+
+                    <button onClick={() => setScroll({left: false, right: true})} className={styles.scrollRight}>
+                        <FontAwesomeIcon className={styles.arrowRight} icon={faChevronRight} />
+                    </button>
+
+                </div>
+
+                { children }
 
             </div>
 
-            { children }
-
-        </div>
+        </Carrossel.Provider>
     )
 };
-
-export default Carrossel;

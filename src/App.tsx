@@ -6,25 +6,25 @@ import DynamicInfo from "./components/DynamicInfo/component";
 import songs from "./pageData/songs";
 import cards from "./pageData/cards";
 import CardList from "./components/CardList/component";
-import Carrossel from "./components/Carrossel/component";
+import { CarrosselProvider } from "./components/Carrossel/component";
 
 function App() {
 
   return (
     <>
       <Header buttons={buttons} />
-      
+
       <DynamicInfo />
 
-      <Carrossel>
+      <CarrosselProvider>
         <SongList songs={songs} />
-      </Carrossel>
+      </CarrosselProvider>
 
       <DynamicInfo dynamicInfo={{text: cards[0].name, img: cards[0].img}} />
       
-      <Carrossel>
+      <CarrosselProvider>
         <CardList cards={cards} />
-      </Carrossel>
+      </CarrosselProvider>
     </>
   )
 }
