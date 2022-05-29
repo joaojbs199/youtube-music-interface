@@ -20,7 +20,7 @@ const List: React.FC<Props> = ({songs}) => {
 
             <FontAwesomeIcon className={styles.arrowLeft} icon={faChevronCircleLeft} />
 
-            <section className={styles.section}>
+            <section className={styles.songList}>
 
                 {songs.map((song, i) => {
                     return (

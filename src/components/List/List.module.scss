@@ -6,7 +6,7 @@
     }
 }
 
-.section {
+.songList {
     width: 90%;
     height: fit-content;
     padding: 20px;
@@ -29,7 +29,7 @@
     }
 }
 
-.section::-webkit-scrollbar {
+.songList::-webkit-scrollbar {
     display: none;
 }
 
