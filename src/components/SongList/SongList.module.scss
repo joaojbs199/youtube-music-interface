@@ -1,4 +1,4 @@
-@import "../../configStyles/variables.scss";
+@import "../../configStyles/variables.module.scss";
 
 @mixin break($width) {
     @media screen and (max-width: $width) {

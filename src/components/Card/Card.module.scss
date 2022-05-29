@@ -1,0 +1,56 @@
+@import "../../configStyles/variables.module.scss";
+
+@mixin break($width) {
+    @media screen and (max-width: $width) {
+      @content
+    }
+}
+
+.cardContainer {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    cursor: pointer;
+    margin: 10px 20px;
+}
+
+.cardImg {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
+
+.cardDescription {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+.cardDescription h1 {
+    width: 100%;
+    font-family: $Roboto;
+    font-size: 25px;
+    color: $primaryText;
+    white-space: nowrap;
+    margin-top: 20px;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.cardDescription p {
+    width: 100%;
+    margin-top: -5px;
+    font-family: $Roboto;
+    font-size: 24px;
+    padding: 8px 0 0 0;
+    font-weight: 500;
+    color: $secondText;
+    white-space: nowrap;
+    cursor: auto;
+}

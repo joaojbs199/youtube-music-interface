@@ -6,14 +6,20 @@ $Youtube: YouTube Sans, sans-serif;
 $Roboto: Roboto, sans-serif;
 $Oswald: Oswald, sans-serif;
 
+//breakpoints
+$bkp900: 900px;
 
 //Colors
 $bkg: #000000;
 $primaryText: #FFFFFF;
 $secondText: #919090;
+$thirdText: #414141;
 $gray: #242323;
+$secondGray: #707070;
 $userIcon: #5456b0;
 $contrastTheme: #f52222;
 
-//Sizes
-$matchSize: 50px;
+
+:export {
+    bkp900: $bkp900
+}

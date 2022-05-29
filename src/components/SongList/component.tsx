@@ -1,6 +1,6 @@
 import React from "react";
 import Song from "../Song/component";
-import styles from "./List.module.scss";
+import styles from "./SongList.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleChevronRight, faChevronCircleLeft } from "@fortawesome/free-solid-svg-icons";
 
@@ -12,7 +12,7 @@ interface Props {
     }[]
 }
 
-const List: React.FC<Props> = ({songs}) => {
+const SongList: React.FC<Props> = ({songs}) => {
 
 
     return (
@@ -36,4 +36,4 @@ const List: React.FC<Props> = ({songs}) => {
     )
 }
 
-export default List;
+export default SongList;

@@ -1,5 +1,7 @@
 import React from "react";
+import { useState } from "react";
 import styles from "./Dynamic.module.scss";
+import { bkp900 } from "../../configStyles/variables.module.scss";
 
 interface Props {
     text?: string;
@@ -14,8 +16,20 @@ const defaultText2 = "Olá, João Batista da Silva";
 
 const DynamicInfo: React.FC<Props> = ({text = defaultText1, dynamicInfo = {text: "", img: null}}) => {
     
+    const breakpoint900 = parseInt(bkp900.toString().replace("px", ""));
+    const [ display, setDisplay ] = useState(true);
+
+    window.addEventListener('resize', () => {
+
+        if(dynamicInfo.img && window.innerWidth <= breakpoint900) {
+            setDisplay(false);
+        } else {
+            setDisplay(true);
+        }
+    });
+
     return(
-        <section className={styles.section}>
+        <section style={{display: display ? "flex" : "none"}} className={styles.section}>
             { !dynamicInfo.img && <button className={styles.userIcon}>J</button>}
             { dynamicInfo.img && <img alt="album-image" className={styles.suchAs} src={dynamicInfo.img} />}
             

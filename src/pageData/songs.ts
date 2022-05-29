@@ -1,4 +1,4 @@
-export const list = [
+export const songs = [
     {
         name: "Blinding lights",
         img: "https://lh3.googleusercontent.com/R_cjQK3wwLPEzri1jerx-79zgzGocoKvwGU3NMONaTsaMM0Idd641pfB8r5jgfpn6I8JAoFtf9RBIcI=w120-h120-l90-rj",
@@ -61,4 +61,4 @@ export const list = [
     }
 ];
 
-export default list;
+export default songs;
