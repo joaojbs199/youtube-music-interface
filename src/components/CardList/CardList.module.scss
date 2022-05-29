@@ -15,8 +15,57 @@
     display: flex;
     align-items: center;
     overflow: auto;
+
+    @include break($bkp900) {
+      border-radius: 10px;
+      background-color: $gray;
+      padding: 20px 0;
+    }
+
+    @include break($bkp700) {
+      width: calc($CardWidth - 200px);
+      overflow: hidden;
+      justify-content: center;
+      border: 1px solid $secondGray;
+      border-radius: 10px;
+      padding: 5px;
+      margin-top: 20px;
+    }
 }
 
 .cardList::-webkit-scrollbar {
   display: none;
+}
+
+.bests {
+  width: 100%;
+  display: none;
+  font-family: $Roboto;
+  color: $primaryText;
+  font-size: 22px;
+  text-align: center;
+  margin-top: 100px;
+
+  @include break($bkp900) {
+    display: block;
+  }
+
+  @include break($bkp700) {
+    display: none;
+  }
+}
+
+.favorite {
+  width: 100%;
+  display: none;
+  font-family: $Roboto;
+  color: $primaryText;
+  font-size: 22px;
+  text-align: center;
+  margin-top: 100px;
+
+  @include break($bkp700) {
+    display: block;
+  }
+
 }

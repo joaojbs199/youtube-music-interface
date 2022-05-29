@@ -21,11 +21,13 @@
     position: relative;
     z-index: 1;
 
-    @include break(900px) {
+    @include break($bkp900) {
         height: 600px;
         display: flex;
         flex-wrap: wrap;
         justify-content: left;
+        background-color: $gray;
+        border-radius: 10px;
     }
 }
 
@@ -44,11 +46,11 @@
     font-size: 50px;
     box-shadow: 3px 3px 80px 3px $secondText;
 
-    @include break(1400px) {
+    @include break($bkp1400) {
         font-size: 30px;
     }
 
-    @include break(900px) {
+    @include break($bkp900) {
         display: none;
     }
 }

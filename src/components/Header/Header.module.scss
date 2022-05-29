@@ -23,7 +23,7 @@
     height: 45px;
     cursor: pointer;
 
-    @include break(900px) {
+    @include break($bkp900) {
         width: 23px;
         height: 23px;
     }
@@ -37,11 +37,11 @@
     margin: 0 0 3px 3px;
     cursor: pointer;
 
-    @include break(350px) {
+    @include break($bkp350) {
         display: none;
     }
 
-    @include break(900px) {
+    @include break($bkp900) {
         font-size: 20px;
     }
 }
@@ -68,11 +68,11 @@
         color: $primaryText;
     }
 
-    @include break(900px) {
+    @include break($bkp900) {
         display: none;
     }
 
-    @include break(1100px) {
+    @include break($bkp1100) {
         font-size: 20px;
         margin: 0 10px;
     }
@@ -94,13 +94,17 @@
         color: $primaryText;
     }
 
-    @include break(900px) {
-        margin: 0 10px;
+    @include break($bkp900) {
+        margin: 0 30px;
         display: inline;
         font-size: 20px;
     }
 
-    @include break(500px) {
+    @include break($bkp630) {
+        margin: 0 15px;
+    }
+
+    @include break($bkp500) {
         display: none;
     }
 }
@@ -120,7 +124,7 @@
         color: $primaryText;
     }
 
-    @include break(500px) {
+    @include break($bkp500) {
         margin: 0 10px;
         display: inline;
         font-size: 20px;
@@ -138,7 +142,7 @@
         color: $contrastTheme;
     }
 
-    @include break(900px) {
+    @include break($bkp900) {
         margin: 0 20px;
         font-size: 20px
     }
@@ -164,7 +168,7 @@
         outline: 6px solid $gray;
     }
 
-    @include break(900px) {
+    @include break($bkp900) {
         width: 20px;
         height: 20px;
         padding: 16px;

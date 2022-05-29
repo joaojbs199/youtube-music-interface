@@ -7,19 +7,29 @@
 }
 
 .cardContainer {
-    width: 400px;
-    height: 400px;
+    width: $CardWidth;
+    height: $CardHeight;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     cursor: pointer;
     margin: 10px 20px;
+
+    @include break($bkp900) {
+        width: calc($CardWidth - 200px);
+        height: calc($CardHeight - 200px);
+    }
 }
 
 .cardImg {
     width: 300px;
     height: 300px;
     border-radius: 50%;
+
+    @include break($bkp900) {
+        width: 150px;
+        height: 150px;
+    }
 }
 
 .cardDescription {
@@ -41,6 +51,10 @@
     &:hover {
         text-decoration: underline;
     }
+
+    @include break($bkp900) {
+        font-size: 20px;
+    }
 }
 
 .cardDescription p {
@@ -53,4 +67,8 @@
     color: $secondText;
     white-space: nowrap;
     cursor: auto;
+
+    @include break($bkp900) {
+        display: none;
+    }
 }

@@ -34,7 +34,7 @@
     justify-content: center;
     cursor: pointer;
     transition: none;
-
+    
     &:hover {
         outline: 6px solid $gray;
     }
@@ -93,10 +93,14 @@
 
     @include break($bkp900) {
         margin-bottom: 3px;
-        font-size: 20px;
+        font-size: 35px;
     }
 
-    @include break(400px) {
+    @include break($bkp630) {
+        font-size: 25px;
+    }
+
+    @include break($bkp400) {
         font-size: 16px;
     }
 }
