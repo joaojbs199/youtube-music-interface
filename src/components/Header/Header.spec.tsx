@@ -1,8 +1,8 @@
 import { render } from "@testing-library/react";
-import { Header } from "../exporter";
-import buttons from "../../pageData/menuButtons";
+import { Header } from "../componentExporter";
+import { buttons } from "../../dataToRender/dataExporter";
 
-describe("Menu buttons", () => {
+describe("Test menu buttons", () => {
 
     it("Should render text buttons", () => {
         const { container } = render(<Header buttons={buttons} />);
@@ -15,4 +15,4 @@ describe("Menu buttons", () => {
         const textButtons = container.getElementsByClassName("iconBtn").length;
         expect(textButtons).toBe(buttons.iconBtn.length);
     });
-})
+});

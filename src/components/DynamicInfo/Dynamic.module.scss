@@ -1,4 +1,4 @@
-@import "../../configStyles/variables.scss";
+@import "../../configStyles/variables.module.scss";
 
 @mixin break($width) {
     @media screen and (max-width: $width) {
@@ -13,7 +13,7 @@
     display: flex;
     align-items: center;
 
-    @include break(900px) {
+    @include break($bkp900) {
         justify-content: center;
         padding: 0;
     }
@@ -34,12 +34,12 @@
     justify-content: center;
     cursor: pointer;
     transition: none;
-
+    
     &:hover {
         outline: 6px solid $gray;
     }
 
-    @include break(900px) {
+    @include break($bkp900) {
         width: 20px;
         height: 20px;
         padding: 16px;
@@ -52,8 +52,8 @@
 }
 
 .suchAs {
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
 
     @include break(400px) {
@@ -67,7 +67,7 @@
     margin-left: 25px;
     font-family: $Roboto;
 
-    @include break(900px) {
+    @include break($bkp900) {
         display: flex;
         align-items: center;
         margin-left: 10px;
@@ -78,7 +78,7 @@
     font-size: 23px;
     color: $secondText;
 
-    @include break(900px) {
+    @include break($bkp900) {
         display: none;
     }
 }
@@ -91,12 +91,16 @@
     font-family: $Youtube;
     font-weight: bold;
 
-    @include break(900px) {
+    @include break($bkp900) {
         margin-bottom: 3px;
-        font-size: 20px;
+        font-size: 35px;
     }
 
-    @include break(400px) {
-        font-size: 16px;
+    @include break($bkp630) {
+        font-size: 25px;
+    }
+
+    @include break($bkp400) {
+        font-size: 20px;
     }
 }

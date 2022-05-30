@@ -1,19 +1,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
 @import url('http://fonts.cdnfonts.com/css/youtube-sans');
+
 //Fonts
 $Youtube: YouTube Sans, sans-serif;
 $Roboto: Roboto, sans-serif;
 $Oswald: Oswald, sans-serif;
 
+//breakpoints
+$bkp1400: 1400px;
+$bkp1100: 1100px;
+$bkp900: 900px;
+$bkp800: 800px;
+$bkp700: 700px;
+$bkp630: 630px;
+$bkp500: 500px;
+$bkp400: 400px;
+$bkp350: 350px;
 
 //Colors
 $bkg: #000000;
 $primaryText: #FFFFFF;
 $secondText: #919090;
+$thirdText: #414141;
 $gray: #242323;
+$secondGray: #707070;
+$thirdGrey: #1d1d1d;
 $userIcon: #5456b0;
 $contrastTheme: #f52222;
 
-//Sizes
-$matchSize: 50px;
+//Widths
+$CardWidth: 400px;
+$CardHeight: $CardWidth;
+
+:export {
+    bkp900: $bkp900
+}
