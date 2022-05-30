@@ -1,7 +1,7 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPodcast } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 import styles from "./Song.module.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPodcast } from "@fortawesome/free-solid-svg-icons";
 
 interface Props {
     name: string;

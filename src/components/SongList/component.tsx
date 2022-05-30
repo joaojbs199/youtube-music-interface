@@ -1,7 +1,8 @@
-import React, { useLayoutEffect, useRef, useContext } from "react";
-import { Carrossel } from "../Carrossel/component";
-import Song from "../Song/component";
+import React, { useLayoutEffect, useRef, useState } from "react";
+import { Song } from "../componentExporter";
 import styles from "./SongList.module.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronRight, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
 interface Props {
     songs: {
@@ -13,34 +14,59 @@ interface Props {
 
 const SongList: React.FC<Props> = ({songs}) => {
 
-    const { scroll } = useContext(Carrossel);
     const list = useRef<HTMLDivElement>(null);
+    const [ scroll, setScroll ] = useState<boolean>(false);
+    const leftVisibility = !scroll ? "hidden": "visible";
+    const rightVisibility = scroll ? "hidden": "visible";
 
     useLayoutEffect(() => {
-        
-        if(null !== list.current) {
 
-            if(scroll.right) {
+        if(null !== list.current) {
+            
+            if(scroll) {
                 list.current.scrollLeft += list.current.scrollWidth
-            }
-            if(scroll.left) {
+            } else {
                 list.current.scrollLeft -= list.current.scrollWidth
             }
         }
-    }, [scroll]);
+    }, [list, scroll]);
 
     return (
 
         <>
-            <section ref={list} className={styles.songList}>
 
-                {songs.map((song, i) => {
-                    return (
-                        <Song key={i} name={song.name} img={song.img} description={song.description} />
-                    )
-                })}
-                
-            </section>
+            <div className={styles.carrossel}>
+
+                <div className={styles.scrollControllers}>
+
+                    <button style={{visibility: leftVisibility}}
+                        onClick={() => {
+                            setScroll(false)
+                        }} className={styles.scrollLeft}>
+                        <FontAwesomeIcon className={styles.arrowLeft} icon={faChevronLeft} />
+                    </button>
+
+                    <button style={{visibility: rightVisibility}}
+                        onClick={() => {
+                            setScroll(true)
+                        }} className={styles.scrollRight}>
+                        <FontAwesomeIcon className={styles.arrowRight} icon={faChevronRight} />
+                    </button>
+
+                </div>
+
+                <section ref={list} className={styles.songList}>
+
+                    {songs.map((song, i) => {
+                        return (
+                            <Song key={i} name={song.name} img={song.img} description={song.description} />
+                        )
+                    })}
+
+                </section>
+
+            </div>
+
         </>
     )
 }

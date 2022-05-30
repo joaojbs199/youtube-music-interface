@@ -1,6 +1,6 @@
-import { getByRole, render } from "@testing-library/react";
-import cards from "../../pageData/cards";
-import DynamicInfo from "./component";
+import { render } from "@testing-library/react";
+import { cards } from "../../dataToRender/dataExporter";
+import { DynamicInfo } from "../componentExporter";
 
 describe("Test dynamic info", () => {
 

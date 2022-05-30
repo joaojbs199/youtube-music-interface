@@ -6,6 +6,51 @@
     }
 }
 
+.carrossel {
+  width: 100%;
+  height: fit-content;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin-bottom: 60px;
+
+  @include break($bkp900) {
+      margin-top: 60px;
+      flex-wrap: wrap;
+  }
+}
+
+.scrollControllers {
+  width: 100%;
+  height: fit-content;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 4%;
+
+  @include break($bkp700) {
+      display: none;
+  }
+}
+
+.scrollLeft, .scrollRight {
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  box-shadow: 1px 1px 100px 1px $secondGray;
+  cursor: pointer;
+}
+
 .cardList {
     width: 90%;
     height: fit-content;

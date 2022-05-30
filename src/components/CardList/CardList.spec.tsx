@@ -1,6 +1,6 @@
 import { render  } from "@testing-library/react";
-import cards from "../../pageData/cards";
-import CardList from "./component";
+import { cards } from "../../dataToRender/dataExporter";
+import { CardList } from "../componentExporter";
 
 describe("Cards list test", () => {
 

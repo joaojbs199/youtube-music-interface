@@ -1,6 +1,6 @@
 import { render  } from "@testing-library/react";
-import songs from "../../pageData/songs";
-import SongList from "./component";
+import { songs } from "../../dataToRender/dataExporter";
+import { SongList } from "../componentExporter";
 
 describe("Song list test", () => {
 

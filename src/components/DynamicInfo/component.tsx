@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import styles from "./Dynamic.module.scss";
 import breakpoints from "../../configStyles/variables.module.scss";
 

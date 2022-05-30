@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react";
-import { Header } from "../exporter";
-import buttons from "../../pageData/menuButtons";
+import { Header } from "../componentExporter";
+import { buttons } from "../../dataToRender/dataExporter";
 
 describe("Test menu buttons", () => {
 
